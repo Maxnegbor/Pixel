@@ -1,0 +1,29 @@
+/* Completion rewards share the cabin's timber, brass and pixel materials. */
+.dev-tools { position:absolute;left:50%;top:0;transform:translateX(-50%);pointer-events:auto;z-index:12; }
+.immersive .dev-trigger {font-size:12px;padding:8px 15px;color:#d7b57e;white-space:nowrap;}
+.immersive .dev-trigger.testing {color:#ffe6a0;border-color:#dcb56a;}
+.immersive .dev-menu {position:absolute;top:48px;left:50%;transform:translateX(-50%);width:min(365px,calc(100vw - 24px));padding:20px 18px;color:#efd6a8;background:#25150c;border:12px solid transparent;border-image:url('/art/timber-panel-v5.png') 18% fill / 12px;box-shadow:4px 6px #100905;max-height:75vh;overflow:auto;font-size:14px;}
+.dev-menu h3{font-size:20px;margin:0;}.dev-menu p{color:#c3a67c;line-height:1.6;}.dev-menu .panel-heading{gap:8px;}.dev-menu .panel-heading button{padding:3px 8px;}
+.dev-menu label{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:15px 0;}.dev-menu input[type=number]{width:65px;padding:8px;font-size:16px;}.dev-menu input[type=checkbox]{accent-color:#dcaf61;width:16px;height:16px;}.dev-menu>button{display:block;width:100%;margin-top:10px;}.dev-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}.dev-presets button{padding:7px 4px;}.dev-presets .selected{color:#ffdc8b;border-color:#f4c879;}
+.dev-world-label{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:8;color:#e4bd74;background:#211409e0;padding:5px 10px;font-size:11px;pointer-events:none;}
+.immersive .hud-coins,.immersive .hud-boxes{display:flex;align-items:center;justify-content:center;gap:5px;min-width:65px;padding:5px 10px!important;}
+.hud-coins img{width:25px;height:25px;object-fit:contain;image-rendering:pixelated;}.hud-boxes img{width:30px;height:25px;object-fit:contain;image-rendering:pixelated;}
+.hud-actions b{display:inline-block;min-width:14px;animation:counter-tick .16s steps(3);}
+@keyframes counter-tick{0%{color:#fff2b5;transform:scale(1.2) translateY(-1px);}100%{transform:scale(1);}}
+.reward-claim {position:fixed;margin:auto;width:min(480px,calc(100vw - 28px));max-height:calc(100dvh - 35px);overflow:auto;padding:32px 25px 20px;color:#f4d8a6;text-align:center;background:#26170e;border:17px solid transparent;border-image:url('/art/timber-panel-v5.png') 18% fill / 17px;box-shadow:5px 8px #120a0799;}
+.reward-claim::backdrop{background:#080e10a6;}
+.reward-claim h2{font-size:36px;margin:14px 0;color:#ffe4ad;line-height:1.1;}.reward-claim>p{line-height:1.7;font-size:15px;}.reward-claim .eyebrow{font-size:11px;letter-spacing:1px;color:#cfa66d;}.reward-bounty{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 0 23px;margin:12px 0 16px;border-top:2px solid #89602d55;border-bottom:2px solid #89602d55;}.reward-bounty>div{display:flex;flex-direction:column;align-items:center;justify-content:end;gap:8px;}.reward-bounty img{width:72px;height:65px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 5px 1px #12090588);}.reward-bounty strong{font-size:25px;color:#ffe4a2;line-height:1.2;}.reward-bounty small{font-size:12px;color:#cfb283;}.xp-glyph{height:65px;display:flex;align-items:center;font-size:46px;color:#c9d993;text-shadow:0 0 15px #c0d58633;}
+.reward-claim .get-rewards{width:100%;padding:14px;font-size:22px;color:#2a1709;background:linear-gradient(#deb56d,#a77435);border:2px solid #f4d597;box-shadow:inset 2px 2px #fff0b666,inset -2px -2px #805523,3px 3px #160b06;}
+.claim-options{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:15px 0;font-size:13px;color:#c7ad86;}.claim-options label{display:flex;align-items:center;gap:7px;}.claim-options input{accent-color:#d7b16c;}.claim-options button{font-size:13px;padding:5px 10px;background:#23160b;border:1px solid #73502e;}.reward-claim .tiny{font-size:11px;color:#b89c76;}
+.reward-flight {position:fixed;inset:0;z-index:30;pointer-events:none;background:radial-gradient(ellipse at center,#100b061a,transparent 65%);}
+.reward-flight canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;}
+.flight-caption{position:absolute;left:50%;top:calc(50% + 145px);transform:translateX(-50%);text-align:center;color:#ffe7ae;width:min(450px,90vw);text-shadow:2px 3px #180b05,0 0 18px #180b05;}.flight-caption h2{font-size:27px;margin:10px 0;}.flight-caption p{font-size:20px;color:#c9d993;}.flight-caption .eyebrow{font-size:11px;letter-spacing:2px;}
+@media(max-width:650px){.dev-tools{top:65px;}.dev-trigger{font-size:11px!important;}.dev-menu{top:40px;}.reward-claim{padding:23px 13px 15px;}.reward-claim h2{font-size:29px;}.reward-bounty{gap:5px;}.reward-bounty strong{font-size:22px;}.dev-world-label{bottom:85px;font-size:9px;}}
+@media(prefers-reduced-motion:reduce){.hud-actions b{animation:none;}}
+.immersive .xp-progress > span {transition:width .14s ease-out;background:linear-gradient(90deg,#718c42,#b8d87a,#e0ecad);box-shadow:0 0 5px #bdd97766;}
+.immersive .xp-level-up > span {background:#e9f7b9;box-shadow:0 0 12px #d3f49c;}
+@media(prefers-reduced-motion:reduce){.immersive .xp-progress > span{transition:none;}}
+/* The test menu must remain above inventory/shop panels in every tab. */
+.immersive .cabin-hud{z-index:12;}
+
+.collection-delivery{position:fixed;inset:0;z-index:40;pointer-events:none}.collection-delivery canvas{width:100%;height:100%;image-rendering:pixelated}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

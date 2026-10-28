@@ -1,0 +1,880 @@
+@font-face {
+  font-family: "Pixelta";
+  src: url("/fonts/Pixelta.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root, body, body *, body *::before, body *::after {
+  font-family: "Pixelta", monospace !important;
+  font-synthesis: none;
+}
+/* V5: real bitmap-inspired fonts and nine-sliced, notched timber battens. */
+.immersive,
+.immersive button,
+.immersive input,
+.immersive select,
+.immersive h1,
+.immersive h2,
+.immersive h3,
+.immersive small,
+.immersive p,
+.immersive span,
+.immersive strong,
+.immersive b,
+.immersive .cabin-brand,
+.immersive .timer-message {
+  font-family: "Pixelta", monospace !important;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: none;
+  letter-spacing: 0.15px;
+}
+.immersive {
+  --walnut: url("/art/timber-panel-v5.png");
+  font-size: 17px;
+}
+.immersive .timer-panel,
+.immersive .progress-hud,
+.immersive .cabin-dock,
+.immersive .floating-panel {
+  border: 18px solid transparent;
+  border-image-source: url("/art/timber-panel-v5.png");
+  border-image-slice: 18% fill;
+  border-image-width: 18px;
+  border-image-repeat: stretch;
+  background: none;
+  outline: none;
+  box-shadow:
+    3px 3px 0 #160c06,
+    6px 6px 0 #0b07074d;
+  image-rendering: pixelated;
+  backdrop-filter: none;
+}
+.immersive .timer-panel {
+  padding: 15px 12px 13px;
+}
+.immersive .timer-panel:before,
+.immersive .timer-panel:after {
+  display: none;
+}
+.immersive .timer-panel .panel-top > .eyebrow {
+  font-family: "Pixelta", monospace !important;
+  font-size: 7px;
+  letter-spacing: 0;
+  color: #d8b47b;
+}
+.immersive .timer-panel .small-badge {
+  font-size: 12px;
+  color: #ead1a1;
+  white-space: nowrap;
+}
+.immersive .timer-ornament {
+  margin-top: 11px;
+  font-size: 13px;
+}
+.immersive .timer-ornament > span {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    #a77636 0 7px,
+    #d2a359 7px 10px,
+    #a77636 10px 14px
+  );
+}
+.immersive .timer-tabs {
+  margin-top: 3px;
+}
+.immersive .timer-tabs button {
+  font-size: 18px;
+  padding: 6px 11px;
+  line-height: 1;
+  color: #c5a575;
+}
+.immersive .timer-tabs button.selected {
+  border-bottom-width: 3px;
+  color: #ffe0a4;
+}
+.immersive .timer-digits {
+  font-family: "Pixelta", monospace !important;
+  font-size: 45px;
+  letter-spacing: -2px;
+  line-height: 1.4;
+  margin-top: 10px;
+  text-shadow: 3px 3px 0 #190e07;
+  font-variant-numeric: tabular-nums;
+}
+.immersive .timer-message {
+  font-size: 13px;
+  line-height: 1.15;
+  margin: 7px -6px 15px;
+  color: #dbc094;
+}
+.immersive .preset-row {
+  gap: 5px;
+}
+.immersive .preset-row > button {
+  font-size: 13px;
+  padding: 6px 5px;
+  line-height: 1;
+}
+.immersive .custom-time {
+  font-size: 12px;
+  gap: 3px;
+}
+.immersive .custom-time input {
+  width: 29px;
+  font-size: 13px;
+  padding: 5px 0;
+}
+.immersive .task-input {
+  font-size: 13px;
+  padding: 10px 8px;
+  margin: 13px 0;
+}
+.immersive .primary,
+.immersive .timer-actions .primary {
+  font-family: "Pixelta", monospace !important;
+  font-size: 15px;
+  padding: 9px 7px;
+  line-height: 1.15;
+  text-shadow: none;
+  box-shadow:
+    inset 2px 2px #f2d59a,
+    inset -2px -2px #795023,
+    3px 3px #211108;
+}
+.immersive .timer-actions .end-button {
+  font-size: 14px;
+  padding: 7px;
+}
+.immersive .reward-hint {
+  font-size: 10px;
+  letter-spacing: 0;
+  gap: 3px;
+}
+.immersive .timer-panel > .tiny {
+  font-size: 10px;
+  line-height: 1.3;
+  margin-top: 10px;
+}
+.immersive .session-progress {
+  height: 5px;
+  margin: 15px 0 10px;
+}
+.immersive .focus-footnote {
+  font-size: 13px;
+  line-height: 1.15;
+  margin-top: 10px;
+}
+.immersive button,
+.immersive input,
+.immersive select {
+  border-radius: 0 !important;
+  image-rendering: pixelated;
+  background-image:
+    linear-gradient(#2b1b0cd9, #2c1b0ce8), url("/art/timber-panel-v5.png");
+  background-size:
+    auto,
+    130px 130px;
+  box-shadow:
+    inset 1px 1px #b4834766,
+    inset -2px -2px #170c07,
+    2px 2px #0d0706;
+}
+.immersive button:hover:not(:disabled) {
+  background-image:
+    linear-gradient(#a16b2c6b, #3c240dc2), url("/art/timber-panel-v5.png");
+  border-color: #deb06b;
+}
+.immersive .preset-row > button.selected {
+  background:
+    linear-gradient(#b6833a99, #5a3416cc), url("/art/timber-panel-v5.png");
+  background-size: auto, 128px;
+  box-shadow:
+    inset 2px 2px #e5b97b66,
+    inset -2px -2px #261508;
+  border-color: #c29251;
+}
+.immersive .cabin-dock {
+  border-width: 15px;
+  border-image-width: 15px;
+  padding: 2px 4px;
+}
+.immersive .cabin-dock button {
+  min-width: 70px;
+  padding: 4px 9px 8px;
+  background: none;
+  box-shadow: none;
+}
+.immersive .cabin-dock button > small {
+  font-size: 14px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+.immersive .cabin-dock button > span {
+  margin-bottom: 3px;
+}
+.immersive .cabin-dock button.active {
+  background: #ac6c292e;
+}
+.immersive .cabin-dock button.active:after {
+  height: 3px;
+  box-shadow: 1px 1px #301b0d;
+}
+.immersive .progress-hud {
+  border-width: 13px;
+  border-image-width: 13px;
+  padding: 9px 9px 8px;
+  width: 228px;
+}
+.immersive .level-medallion {
+  clip-path: polygon(
+    20% 0,
+    80% 0,
+    80% 10%,
+    100% 10%,
+    100% 90%,
+    80% 90%,
+    80% 100%,
+    20% 100%,
+    20% 90%,
+    0 90%,
+    0 10%,
+    20% 10%
+  );
+  border-radius: 0 !important;
+  font-family: "Pixelta", monospace !important;
+  font-size: 12px;
+  text-shadow: 1px 1px #2b1705;
+  box-shadow:
+    inset 2px 2px #edca83,
+    inset -2px -2px #5b371b;
+  background: #93652d;
+}
+.immersive .progress-identity .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+.immersive .progress-identity h3 {
+  font-size: 21px;
+  margin-top: 0;
+  line-height: 1.1;
+}
+.immersive .progress-numbers {
+  font-size: 11px;
+  line-height: 1.1;
+  margin-top: 7px;
+  letter-spacing: 0;
+}
+.immersive .xp-progress {
+  height: 5px;
+  margin-top: 11px;
+}
+.immersive .cabin-brand {
+  font-family: "Pixelta", monospace !important;
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+.immersive .cabin-brand small {
+  font-family: "Pixelta", monospace !important;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 7px;
+}
+.immersive .cabin-brand > span {
+  font-size: 29px;
+}
+.immersive .cabin-location {
+  font-size: 22px;
+}
+.immersive .cabin-location small {
+  font-size: 12px;
+  margin-top: 4px;
+}
+.immersive .place-chip {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  background:
+    linear-gradient(#1e130ace, #1d120ace), url("/art/timber-panel-v5.png");
+  background-size: auto, 160px;
+  image-rendering: pixelated;
+}
+.immersive .hud-coins,
+.immersive .hud-boxes,
+.immersive .hud-avatar {
+  font-size: 18px;
+  border: 5px solid transparent !important;
+  border-image-source: url("/art/timber-panel-v5.png");
+  border-image-slice: 18% fill;
+  border-image-width: 6px;
+  background: none !important;
+  box-shadow: 2px 2px #150b08;
+  image-rendering: pixelated;
+  padding: 3px 11px;
+  height: 40px;
+}
+.immersive .hud-avatar {
+  padding: 3px;
+  width: 40px;
+}
+.immersive .view-controls button {
+  font-size: 20px;
+  background:
+    linear-gradient(#251509a6, #251509b8), url("/art/timber-panel-v5.png");
+  background-size: auto, 110px;
+  image-rendering: pixelated;
+}
+.immersive .view-controls button span {
+  font-size: 13px;
+}
+.immersive .demo-tag {
+  font-size: 11px;
+  background: none;
+  box-shadow: none;
+  text-shadow: 1px 1px #000;
+}
+.immersive .dock-count {
+  font-size: 12px;
+}
+.immersive .floating-panel {
+  border-width: 18px;
+  border-image-width: 18px;
+}
+.immersive .floating-panel-top {
+  padding: 6px 4px 8px 12px;
+  font-size: 17px;
+  letter-spacing: 0.4px;
+}
+.immersive .floating-panel-top button {
+  font-size: 26px;
+  background: none;
+  box-shadow: none;
+}
+.immersive .panel-scroll {
+  padding: 16px;
+}
+.immersive .panel-scroll h2 {
+  font-family: "Pixelta", monospace !important;
+  font-size: 21px;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+.immersive .panel-scroll .eyebrow {
+  font-size: 11px;
+  line-height: 1.2;
+}
+.immersive .panel-scroll .muted {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.immersive .panel-scroll .tiny {
+  font-size: 12px;
+  line-height: 1.25;
+}
+.immersive .panel-scroll .item-card {
+  background:
+    linear-gradient(#311e0bc7, #26170dd9), url("/art/timber-panel-v5.png");
+  background-size: auto, 190px;
+  image-rendering: pixelated;
+  border: 6px solid transparent;
+  border-image-source: url("/art/timber-panel-v5.png");
+  border-image-slice: 18% fill;
+  border-image-width: 7px;
+  box-shadow: 2px 2px #130a06;
+  padding: 9px;
+}
+.immersive .panel-scroll .item-card h3 {
+  font-size: 21px;
+  line-height: 1.1;
+  min-height: 45px;
+  margin: 8px 0;
+}
+.immersive .rarity-label {
+  font-size: 11px;
+  line-height: 1;
+}
+.immersive .equipped-mark,
+.immersive .quantity {
+  font-size: 11px;
+}
+.immersive .item-buttons button {
+  font-size: 15px;
+  padding: 7px 5px;
+}
+.immersive .segmented button,
+.immersive .filter-row select {
+  font-size: 14px;
+  padding: 7px 9px;
+}
+.immersive .panel-heading > .gold {
+  font-size: 16px;
+}
+.immersive .odds span {
+  font-size: 13px;
+}
+.immersive .odds strong {
+  font-size: 23px;
+}
+.immersive .box-caption {
+  font-size: 17px;
+}
+.immersive .sound-row {
+  font-size: 16px;
+}
+.immersive .sound-row > span:last-child {
+  font-size: 14px;
+}
+.immersive .sound-controls .panel-heading button {
+  font-size: 15px;
+}
+.immersive .statistics > h3 {
+  font-size: 23px;
+}
+.immersive .session-list > div {
+  font-size: 16px;
+}
+.immersive .session-list small {
+  font-size: 12px;
+}
+.immersive .stats-metrics strong {
+  font-size: 35px;
+}
+.immersive .stats-metrics div > span {
+  font-size: 13px;
+}
+.immersive .profile-form label,
+.immersive .profile-form button {
+  font-size: 16px;
+}
+.immersive .bar-chart > div {
+  font-size: 14px;
+}
+.immersive .scene-preview,
+.immersive .toast {
+  border: 9px solid transparent;
+  border-image-source: url("/art/timber-panel-v5.png");
+  border-image-slice: 18% fill;
+  border-image-width: 10px;
+  box-shadow: 3px 3px #130b07;
+  image-rendering: pixelated;
+  font-size: 15px;
+  background: none;
+}
+.immersive .scene-preview p {
+  font-size: 21px;
+}
+.immersive .scene-preview button {
+  font-size: 14px;
+}
+.immersive .toast button {
+  font-size: 19px;
+  background: none;
+  box-shadow: none;
+}
+.immersive .scene-preview .eyebrow {
+  font-size: 10px;
+}
+.immersive .zen-session {
+  font-size: 15px;
+}
+.immersive .zen-session button {
+  font-size: 15px;
+}
+.immersive .pet-hotspot {
+  left: 63%;
+  top: 54%;
+  width: 12%;
+  height: 13%;
+}
+@media (min-width: 1650px) {
+  .immersive .timer-digits {
+    font-size: 49px;
+  }
+  .immersive .timer-panel {
+    padding: 18px 15px;
+  }
+  .immersive .timer-message {
+    font-size: 14px;
+  }
+}
+@media (max-height: 760px) and (min-width: 801px) {
+  .immersive .timer-panel {
+    border-width: 15px;
+    border-image-width: 15px;
+    padding: 12px 12px;
+  }
+  .immersive .timer-ornament {
+    margin-top: 6px;
+  }
+  .immersive .timer-digits {
+    font-size: 39px;
+    margin-top: 5px;
+  }
+  .immersive .timer-message {
+    font-size: 12px;
+    margin-bottom: 11px;
+  }
+  .immersive .timer-tabs button {
+    font-size: 17px;
+  }
+  .immersive .cabin-dock {
+    border-width: 12px;
+    border-image-width: 12px;
+  }
+}
+@media (max-width: 1000px) {
+  .immersive .timer-panel {
+    padding: 12px 9px;
+  }
+  .immersive .timer-panel .panel-top > .eyebrow {
+    font-size: 6px;
+  }
+  .immersive .timer-panel .small-badge {
+    font-size: 10px;
+  }
+  .immersive .timer-digits {
+    font-size: 40px;
+  }
+  .immersive .timer-message {
+    font-size: 11px;
+  }
+  .immersive .timer-tabs button {
+    font-size: 17px;
+    padding: 6px 9px;
+  }
+  .immersive .preset-row > button {
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+  .immersive .reward-hint {
+    font-size: 9px;
+  }
+  .immersive .cabin-dock button {
+    min-width: 60px;
+    padding: 5px 6px;
+  }
+  .immersive .cabin-dock button > small {
+    font-size: 13px;
+  }
+  .immersive .item-buttons button {
+    font-size: 14px;
+  }
+  .immersive .progress-hud {
+    width: 210px;
+  }
+}
+@media (max-width: 700px) {
+  .immersive .timer-panel {
+    border-width: 13px;
+    border-image-width: 13px;
+    padding: 9px 7px;
+  }
+  .immersive .timer-ornament {
+    margin-top: 6px;
+  }
+  .immersive .timer-tabs button {
+    font-size: 16px;
+    padding: 5px 7px;
+  }
+  .immersive .timer-digits {
+    font-size: 34px;
+    letter-spacing: -2px;
+    margin-top: 5px;
+  }
+  .immersive .timer-message {
+    font-size: 10px;
+    margin: 4px -5px 9px;
+  }
+  .immersive .preset-row > button {
+    font-size: 11px;
+    padding: 5px 3px;
+  }
+  .immersive .custom-time input {
+    width: 25px;
+    font-size: 12px;
+    padding: 5px 0;
+  }
+  .immersive .custom-time {
+    font-size: 10px;
+    gap: 2px;
+  }
+  .immersive .task-input {
+    font-size: 12px;
+    padding: 7px;
+    margin: 9px 0;
+  }
+  .immersive .timer-actions .primary {
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+  .immersive .timer-actions .end-button {
+    font-size: 12px;
+    padding: 7px;
+  }
+  .immersive .reward-hint {
+    font-size: 8px;
+    gap: 2px;
+  }
+  .immersive .session-progress {
+    margin: 11px 0 8px;
+  }
+  .immersive .timer-panel .panel-top > .eyebrow {
+    font-size: 5px;
+  }
+  .immersive .timer-panel .small-badge {
+    font-size: 9px;
+  }
+  .immersive .progress-hud {
+    width: 130px;
+    border-width: 10px;
+    border-image-width: 10px;
+    padding: 5px;
+  }
+  .immersive .progress-identity h3 {
+    font-size: 16px;
+  }
+  .immersive .progress-identity .eyebrow {
+    font-size: 8px;
+  }
+  .immersive .progress-numbers {
+    font-size: 10px;
+  }
+  .immersive .level-medallion {
+    font-size: 9px;
+  }
+  .immersive .cabin-dock {
+    border-width: 10px;
+    border-image-width: 10px;
+    padding: 0 2px;
+    width: 410px;
+  }
+  .immersive .cabin-dock button {
+    min-width: 0;
+    padding: 4px 2px 7px;
+  }
+  .immersive .cabin-dock button > small {
+    font-size: 11px;
+  }
+  .immersive .cabin-brand {
+    font-size: 16px;
+  }
+  .immersive .cabin-brand small {
+    font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+  .immersive .hud-coins,
+  .immersive .hud-boxes,
+  .immersive .hud-avatar {
+    font-size: 15px;
+    border-width: 4px !important;
+    border-image-width: 5px;
+    height: 33px;
+    padding: 3px 8px;
+  }
+  .immersive .hud-avatar {
+    padding: 3px;
+    width: 33px;
+  }
+  .immersive .cabin-location {
+    font-size: 18px;
+  }
+  .immersive .floating-panel {
+    border-width: 13px;
+    border-image-width: 13px;
+  }
+  .immersive .panel-scroll {
+    padding: 12px;
+  }
+  .immersive .panel-scroll h2 {
+    font-size: 17px;
+  }
+  .immersive .panel-scroll .item-card {
+    border-width: 5px;
+    border-image-width: 6px;
+    padding: 7px;
+  }
+  .immersive .panel-scroll .item-card h3 {
+    font-size: 19px;
+  }
+  .immersive .item-buttons button {
+    font-size: 13px;
+  }
+  .immersive .filter-row select,
+  .immersive .segmented button {
+    font-size: 12px;
+  }
+  .immersive .scene-preview .eyebrow {
+    font-size: 9px;
+  }
+  .immersive .scene-preview p {
+    font-size: 17px;
+  }
+  .immersive .scene-preview button {
+    font-size: 12px;
+  }
+  .immersive .toast {
+    font-size: 13px;
+  }
+  .immersive .demo-tag {
+    font-size: 10px;
+  }
+  .immersive .focus-footnote {
+    font-size: 11px;
+  }
+}
+@media (max-width: 390px) {
+  .immersive .timer-digits {
+    font-size: 31px;
+  }
+  .immersive .progress-hud {
+    width: 105px;
+  }
+  .immersive .progress-identity h3 {
+    font-size: 15px;
+  }
+  .immersive .cabin-dock button > small {
+    font-size: 10px;
+  }
+  .immersive .cabin-brand {
+    font-size: 14px;
+  }
+  .immersive .cabin-brand small {
+    display: none;
+  }
+}
+
+/* Override legacy serif rules on div-based labels as well as text elements. */
+.immersive * {
+  font-family: "Pixelta", monospace !important;
+  font-style: normal !important;
+}
+.immersive .cabin-brand,
+.immersive .timer-digits,
+.immersive .panel-scroll h2,
+.immersive .level-medallion,
+.immersive .timer-panel .panel-top > .eyebrow {
+  font-family: "Pixelta", monospace !important;
+}
+.immersive .hud-coins,
+.immersive .hud-boxes,
+.immersive .hud-avatar {
+  border-image-source: url("/art/timber-panel-v5.png") !important;
+  border-image-slice: 18% fill !important;
+  border-image-width: 7px !important;
+}
+.immersive .pet-hotspot {
+  left: 61%;
+  top: 54%;
+  width: 11%;
+  height: 12%;
+}
+/* Invisible scene hit areas must never inherit button material or bevels. */
+.immersive .room-hotspot,
+.immersive .room-hotspot:hover {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none;
+}
+.immersive .room-hotspot:focus-visible {
+  outline: 2px dashed #d8b577;
+  outline-offset: 2px;
+}
+
+/* V7: authored chest art, free of the generic button's timber rectangle. */
+.immersive .mystery-box,
+.immersive .mystery-box:hover:not(:disabled) {
+  position: relative;
+  display: block;
+  width: min(300px, 100%);
+  height: 258px;
+  margin: 18px auto 8px;
+  padding: 0;
+  border: 0;
+  background: none !important;
+  box-shadow: none;
+  filter: none;
+  opacity: 1;
+  isolation: isolate;
+  transform: none;
+}
+.chest-art {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 238px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  transform-origin: 50% 86%;
+  transition: filter .2s;
+  user-select: none;
+  pointer-events: none;
+}
+.mystery-box:hover:not(:disabled) .chest-art {
+  filter: brightness(1.1);
+}
+.chest-light {
+  position: absolute;
+  z-index: -1;
+  inset: 25% 6% 10%;
+  background: radial-gradient(ellipse, #dfa44a2e, #b97d2014 45%, transparent 70%);
+  opacity: .45;
+  transition: opacity .25s;
+  pointer-events: none;
+}
+.crack-1 .chest-light { opacity: .7; }
+.crack-2 .chest-light { opacity: 1; }
+.crack-3 .chest-light { opacity: 1; background: radial-gradient(ellipse, #eeb94a66, transparent 70%); }
+.crack-1 .chest-art { animation: chest-knock-left .36s steps(6); }
+.crack-2 .chest-art { animation: chest-knock-right .36s steps(6); }
+.crack-3 .chest-art { animation: chest-knock-left .36s steps(6); filter: brightness(1.08); }
+.chest-opening .chest-art { animation: chest-unlock .7s steps(8) infinite; }
+.chest-progress {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.chest-progress i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: #2d190d;
+  box-shadow: inset 1px 1px #ab7a3d, 1px 1px #110905;
+  transform: rotate(45deg);
+}
+.chest-progress i.lit { background: #edc775; box-shadow: 0 0 9px #e7a74066; }
+@keyframes chest-knock-left {
+  25% { transform: rotate(-2deg) translateY(-2px); }
+  60% { transform: rotate(1deg); }
+}
+@keyframes chest-knock-right {
+  25% { transform: rotate(2deg) translateY(-2px); }
+  60% { transform: rotate(-1deg); }
+}
+@keyframes chest-unlock {
+  50% { transform: translateY(-2px); filter: brightness(1.2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chest-art { animation: none !important; transition: none; }
+  .chest-light { transition: none; }
+}
+
+/* Interaction regions stay attached to the same world surfaces as their art. */
+.immersive .desk-hotspot {
+  left: calc(34% + var(--desk-shift-x, 0%));
+  top: calc(65% + var(--desk-shift-y, 0%));
+}
+.immersive .pet-hotspot {
+  left: calc(67.5% + var(--desk-shift-x, 0%));
+  top: calc(54% + var(--desk-shift-y, 0%));
+  width: 12%; height: 13%;
+}
+.immersive .fire-hotspot {
+  left: calc(83% + var(--room-shift-x, 0%));
+  top: calc(47% + var(--room-shift-y, 0%));
+}

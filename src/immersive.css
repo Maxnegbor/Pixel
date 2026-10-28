@@ -1,0 +1,1112 @@
+/* Full-viewport scene: HUD elements float above the artwork, never resize it. */
+.immersive {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #101815;
+  color: #f0e3c9;
+  isolation: isolate;
+}
+.immersive .cabin-wrap {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  box-shadow: none;
+  background: #101815;
+  overflow: hidden;
+}
+.immersive .cabin-wrap canvas {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  image-rendering: pixelated;
+  display: block;
+}
+.scene-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    #07100e85 0%,
+    transparent 22%,
+    transparent 68%,
+    #07100e99 100%
+  );
+  z-index: 1;
+}
+.cabin-hud {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 5;
+  pointer-events: none;
+}
+.cabin-hud > * {
+  pointer-events: auto;
+}
+.cabin-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f1dfb9;
+  text-shadow: 0 2px 12px #000;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  line-height: 1;
+}
+.cabin-brand > span {
+  color: #e5b66b;
+  font: 33px monospace;
+}
+.cabin-brand small {
+  display: block;
+  font:
+    8px "Courier New",
+    monospace;
+  letter-spacing: 1.8px;
+  color: #c3b79e;
+  margin-top: 9px;
+}
+.place-chip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #d1c6ac;
+  font-size: 10px;
+  letter-spacing: 0.7px;
+  background: #121d1a77;
+  border: 1px solid #a4976433;
+  padding: 10px 16px;
+  backdrop-filter: blur(12px);
+}
+.place-chip > span {
+  color: #a9a486;
+}
+.hud-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.hud-coins,
+.hud-boxes,
+.hud-avatar {
+  background: #172019a6 !important;
+  border: 1px solid #bba16b4d !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 9px #0003;
+  padding: 10px 15px;
+  color: #e4c48c;
+  font-size: 13px;
+  height: 39px;
+}
+.hud-avatar {
+  padding: 8px;
+  width: 39px;
+  color: #e2dfb7;
+  background: #344433b5 !important;
+}
+.hud-actions b {
+  font-weight: 400;
+}
+.view-controls {
+  position: absolute;
+  top: 89px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+.view-controls button {
+  background: #15201988;
+  border: 1px solid #e1c18b30;
+  color: #d4c4a3;
+  font-size: 18px;
+  height: 32px;
+  min-width: 32px;
+  padding: 2px 8px;
+  backdrop-filter: blur(10px);
+}
+.view-controls button span {
+  font-size: 9px;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+.immersive .immersive-main {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  max-width: none;
+  pointer-events: none;
+}
+.immersive-main > * {
+  pointer-events: auto;
+}
+.focus-overlay {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 292px;
+  z-index: 4;
+}
+.immersive .timer-panel {
+  padding: 22px 20px 16px;
+  background: linear-gradient(145deg, #17221dbd, #1c251bb8);
+  border: 1px solid #c8b48850;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 12px 50px #030a0840,
+    inset 0 0 30px #cda85a04;
+}
+.immersive .timer-panel .panel-top > .eyebrow {
+  font-size: 7px;
+  letter-spacing: 1.1px;
+}
+.immersive .timer-panel .small-badge {
+  font-size: 8px;
+  color: #c5cda4;
+}
+.immersive .timer-tabs {
+  margin-top: 22px;
+  border-color: #a99e6b2b;
+}
+.immersive .timer-tabs button {
+  color: #aaa990;
+  font-size: 10px;
+  padding: 9px 14px;
+}
+.immersive .timer-tabs button.selected {
+  color: #eadab8;
+  border-color: #d6b67f;
+}
+.immersive .timer-digits {
+  font-size: 64px;
+  margin-top: 21px;
+  font-weight: 400;
+  letter-spacing: -3px;
+  color: #f4e7c8;
+}
+.immersive .timer-message {
+  font-size: 8px;
+  color: #bbbaa1;
+  margin: 13px -6px 20px;
+}
+.immersive .preset-row {
+  gap: 5px;
+}
+.immersive .preset-row > button {
+  font-size: 9px;
+  padding: 7px 6px;
+  background: #18201977;
+  border-color: #b6af733d;
+}
+.immersive .preset-row > button.selected {
+  color: #f2dab1;
+  border-color: #c7ae75;
+  background: #6969403d;
+}
+.immersive .custom-time {
+  font-size: 8px;
+  gap: 4px;
+}
+.immersive .custom-time input {
+  font-size: 9px;
+  width: 34px;
+  padding: 7px 1px;
+  border-color: #b6af733d;
+  background: #18201966;
+  color: #ddd6b7;
+}
+.immersive .task-input {
+  margin: 16px 0 14px;
+  background: #101c155e;
+  border-color: #9aa07330;
+  color: #e0d6b8;
+  font-size: 9px;
+}
+.immersive .task-input::placeholder {
+  color: #b9baa099;
+}
+.immersive .primary {
+  background: #c6cea3;
+  color: #263023;
+  border-color: #d7dbb6;
+  box-shadow: 0 3px 0 #75835c;
+  font-size: 10px;
+  padding: 12px;
+}
+.immersive .timer-actions .end-button {
+  background: #263326b3;
+  border-color: #8a946053;
+  font-size: 9px;
+}
+.immersive .session-progress {
+  background: #88976a33;
+  margin: 19px 0 13px;
+}
+.immersive .session-progress > span {
+  background: #c7ce9b;
+}
+.immersive .reward-hint {
+  font-size: 7px;
+  gap: 5px;
+  color: #c5c8ac;
+}
+.immersive .timer-panel > .tiny {
+  color: #aaa98f;
+  font-size: 7px;
+  margin-top: 12px;
+}
+.focus-footnote {
+  font-size: 8px;
+  text-align: center;
+  color: #c5b99e;
+  margin-top: 15px;
+  text-shadow: 0 1px 5px #000;
+}
+.progress-hud {
+  position: absolute;
+  left: 32px;
+  bottom: 110px;
+  width: 222px;
+  padding: 16px 17px;
+  background: linear-gradient(130deg, #1b261cc2, #18231b94);
+  border: 1px solid #c3af7547;
+  backdrop-filter: blur(12px);
+  z-index: 3;
+  box-shadow: 0 8px 25px #0002;
+}
+.progress-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.level-medallion {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 35px;
+  flex-shrink: 0;
+  color: #e9ca8f;
+  background: #475338aa;
+  clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  font-size: 14px;
+}
+.progress-identity .eyebrow {
+  font-size: 7px;
+  color: #b7bba0;
+  letter-spacing: 0.8px;
+}
+.progress-identity h3 {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  color: #eddfc2;
+  margin-top: 4px;
+}
+.immersive .xp-progress {
+  height: 4px;
+  background: #121c1699;
+  border: 0;
+  margin-top: 15px;
+}
+.immersive .xp-progress > span {
+  background: #b7c291;
+}
+.progress-numbers {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #bcbda0;
+  font-size: 8px;
+  margin-top: 8px;
+}
+.cabin-location {
+  position: absolute;
+  left: 32px;
+  top: 113px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #e3d1af;
+  text-shadow: 0 2px 8px #000;
+  z-index: 3;
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+.cabin-location > span {
+  font-size: 23px;
+  color: #bfccbb;
+}
+.cabin-location small {
+  display: block;
+  font:
+    8px "Courier New",
+    monospace;
+  margin-top: 7px;
+  color: #c5bca5;
+}
+.cabin-dock {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  z-index: 7;
+  background: linear-gradient(180deg, #1e2b23db, #142018e3);
+  border: 1px solid #d0b57c57;
+  box-shadow:
+    0 10px 40px #0005,
+    inset 0 1px #e0c99012;
+  backdrop-filter: blur(14px);
+}
+.cabin-dock button {
+  position: relative;
+  border: 0;
+  background: none;
+  padding: 9px 11px 10px;
+  color: #c5c5a9;
+  min-width: 70px;
+}
+.cabin-dock button > span {
+  font-size: 20px;
+  line-height: 1.2;
+  display: block;
+  color: #c9ceac;
+  margin-bottom: 7px;
+}
+.cabin-dock button > small {
+  font-size: 8px;
+  display: block;
+  white-space: nowrap;
+}
+.cabin-dock button:hover:not(:disabled) {
+  background: #a2b17b1c;
+}
+.cabin-dock button.active {
+  background: #b8be8620;
+  color: #f1dfb5;
+}
+.cabin-dock button.active:after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 35%;
+  right: 35%;
+  height: 2px;
+  background: #e2bd7d;
+}
+.dock-count {
+  font-style: normal;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  background: #b48c50;
+  color: #181e15;
+  padding: 1px 4px;
+  font-size: 8px;
+}
+.demo-tag {
+  position: absolute;
+  bottom: 30px;
+  left: 32px;
+  padding: 5px 0;
+  font-size: 8px;
+  color: #c9c7ab;
+  border: 0;
+  background: transparent;
+  z-index: 8;
+  text-shadow: 0 1px 4px #000;
+}
+.demo-tag span {
+  color: #acb39b;
+}
+.floating-panel {
+  position: absolute;
+  left: 32px;
+  top: 174px;
+  bottom: 127px;
+  width: min(680px, calc(100vw - 388px));
+  z-index: 6;
+  background: linear-gradient(140deg, #19271df5, #1b271ff0);
+  border: 1px solid #b2a57466;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 60px #0007;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+}
+.floating-panel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 13px 9px 22px;
+  border-bottom: 1px solid #b2a57433;
+  color: #bdbd9e;
+  letter-spacing: 1px;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+.floating-panel-top button {
+  font-size: 22px;
+  border: 0;
+  background: transparent;
+  padding: 0 6px;
+  line-height: 1.3;
+  color: #cfc5a5;
+}
+.panel-scroll {
+  overflow: auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+  padding: 23px;
+  scrollbar-width: thin;
+  scrollbar-color: #6e7855 #1a261b;
+}
+.panel-scroll h2 {
+  color: #ebddbc;
+}
+.panel-scroll .muted {
+  color: #adb59d;
+}
+.panel-scroll .item-card {
+  background: #223226ad;
+  border-color: #6e79534d;
+}
+.panel-scroll .item-card.rarity-legendary {
+  border-color: #ae935d;
+}
+.panel-scroll .item-card.rarity-epic {
+  border-color: #87739f;
+}
+.panel-scroll .item-card.rarity-rare {
+  border-color: #60888e;
+}
+.panel-scroll .item-card.rarity-uncommon {
+  border-color: #789163;
+}
+.panel-scroll .item-image {
+  min-height: 72px;
+}
+.panel-scroll .item-card h3 {
+  font-size: 15px;
+}
+.panel-scroll .item-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.panel-scroll .filter-row {
+  margin: 20px 0 16px;
+}
+.panel-scroll .sound-row > span:nth-child(2) {
+  width: 145px;
+}
+.panel-scroll .sound-row {
+  font-size: 10px;
+}
+.scene-preview {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 130px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a281df2;
+  border: 1px solid #d2bd7a88;
+  padding: 14px 18px;
+  z-index: 9;
+  box-shadow: 0 10px 25px #0005;
+  white-space: nowrap;
+}
+.scene-preview p {
+  font:
+    17px Georgia,
+    serif;
+  margin-top: 3px;
+}
+.scene-preview .eyebrow {
+  font-size: 7px;
+}
+.scene-preview button {
+  font-size: 9px;
+  padding: 9px 11px;
+}
+.immersive:has(.scene-preview) .floating-panel {
+  bottom: 225px;
+}
+.immersive .toast {
+  bottom: 121px;
+  background: #293f2cf5;
+  border-color: #b5bd8c;
+  font-size: 10px;
+  z-index: 20;
+}
+.immersive .toast.error {
+  background: #563a31f5;
+  border-color: #a4715f;
+}
+.zen-mode .cabin-hud,
+.zen-mode .focus-overlay,
+.zen-mode .progress-hud,
+.zen-mode .cabin-location,
+.zen-mode .cabin-dock,
+.zen-mode .demo-tag,
+.zen-mode .floating-panel,
+.zen-mode .scene-preview,
+.zen-mode .scene-shade {
+  display: none !important;
+}
+.zen-session {
+  position: absolute;
+  bottom: 30px;
+  left: 32px;
+  z-index: 4;
+  font-size: 10px;
+  color: #e3d6b6;
+  background: #112019b3;
+  padding: 10px 14px;
+  border: 1px solid #b6b27a44;
+  backdrop-filter: blur(10px);
+}
+.zen-session button {
+  font-size: 10px;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #d3d8ab;
+}
+.immersive .room-hotspot {
+  z-index: 2;
+  font-size: 0;
+  padding: 0;
+}
+.immersive .desk-hotspot {
+  left: 36%;
+  top: 72%;
+  width: 25%;
+  height: 16%;
+}
+.immersive .fire-hotspot {
+  left: 84%;
+  top: 49%;
+  width: 10%;
+  height: 22%;
+}
+.immersive .pet-hotspot {
+  left: 66%;
+  top: 68%;
+  width: 10%;
+  height: 15%;
+}
+@media (min-width: 1650px) {
+  .focus-overlay {
+    right: 48px;
+    width: 310px;
+  }
+  .cabin-hud {
+    left: 48px;
+    right: 48px;
+    top: 36px;
+  }
+  .view-controls {
+    right: 48px;
+    top: 98px;
+  }
+  .progress-hud {
+    left: 48px;
+    bottom: 130px;
+  }
+  .cabin-location {
+    left: 48px;
+    top: 130px;
+  }
+  .demo-tag {
+    left: 48px;
+    bottom: 40px;
+  }
+  .cabin-dock {
+    bottom: 34px;
+  }
+  .floating-panel {
+    left: 48px;
+    top: 195px;
+    bottom: 143px;
+    width: 720px;
+  }
+  .immersive .timer-digits {
+    font-size: 71px;
+  }
+}
+@media (max-height: 760px) and (min-width: 801px) {
+  .cabin-hud {
+    top: 21px;
+  }
+  .view-controls {
+    top: 74px;
+  }
+  .cabin-location {
+    top: 96px;
+    font-size: 15px;
+  }
+  .focus-overlay {
+    top: 51%;
+    transform: translateY(-46%);
+  }
+  .immersive .timer-panel {
+    padding: 16px 18px 13px;
+  }
+  .immersive .timer-digits {
+    font-size: 54px;
+    margin-top: 14px;
+  }
+  .immersive .timer-tabs {
+    margin-top: 13px;
+  }
+  .immersive .timer-message {
+    margin: 10px -5px 14px;
+  }
+  .immersive .task-input {
+    margin: 12px 0;
+  }
+  .immersive .timer-panel > .tiny {
+    display: none;
+  }
+  .immersive .session-progress {
+    margin: 15px 0 12px;
+  }
+  .floating-panel {
+    top: 147px;
+    bottom: 113px;
+  }
+  .cabin-dock {
+    bottom: 18px;
+  }
+  .progress-hud {
+    bottom: 110px;
+  }
+  .demo-tag {
+    bottom: 30px;
+  }
+  .scene-preview {
+    bottom: 110px;
+  }
+}
+@media (max-width: 1000px) {
+  .cabin-hud {
+    left: 22px;
+    right: 22px;
+    top: 23px;
+  }
+  .cabin-brand {
+    font-size: 24px;
+  }
+  .place-chip {
+    display: none;
+  }
+  .focus-overlay {
+    right: 22px;
+    width: 268px;
+  }
+  .view-controls {
+    right: 22px;
+    top: 82px;
+  }
+  .progress-hud {
+    left: 22px;
+    width: 200px;
+  }
+  .cabin-location {
+    left: 22px;
+    top: 103px;
+    font-size: 16px;
+  }
+  .demo-tag {
+    left: 22px;
+  }
+  .demo-tag span {
+    display: none;
+  }
+  .floating-panel {
+    left: 22px;
+    top: 160px;
+    width: calc(100vw - 334px);
+  }
+  .panel-scroll {
+    padding: 18px;
+  }
+  .panel-scroll .item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .panel-scroll .panel-heading {
+    flex-wrap: wrap;
+  }
+  .panel-scroll .sound-row {
+    flex-wrap: wrap;
+  }
+  .panel-scroll .sound-row input {
+    flex-basis: 45%;
+  }
+  .cabin-dock button {
+    min-width: 62px;
+    padding: 8px;
+  }
+  .cabin-dock button > small {
+    font-size: 7px;
+  }
+  .immersive .timer-message {
+    font-size: 7px;
+  }
+  .immersive .preset-row > button {
+    padding: 7px 4px;
+    font-size: 8px;
+  }
+  .immersive .reward-hint {
+    font-size: 6.5px;
+  }
+}
+@media (max-width: 700px) {
+  .cabin-hud {
+    left: 17px;
+    right: 17px;
+    top: 19px;
+    gap: 10px;
+  }
+  .cabin-brand {
+    font-size: 22px;
+    gap: 8px;
+  }
+  .cabin-brand > span {
+    font-size: 27px;
+  }
+  .cabin-brand small {
+    font-size: 6px;
+    letter-spacing: 1.1px;
+    margin-top: 6px;
+  }
+  .hud-actions {
+    gap: 6px;
+  }
+  .hud-coins,
+  .hud-boxes,
+  .hud-avatar {
+    font-size: 11px;
+    padding: 8px 10px;
+    height: 34px;
+  }
+  .hud-avatar {
+    width: 34px;
+    padding: 8px;
+  }
+  .cabin-location {
+    top: 82px;
+    left: 18px;
+    font-size: 15px;
+  }
+  .cabin-location small {
+    display: none;
+  }
+  .view-controls {
+    top: 80px;
+    right: 17px;
+    gap: 5px;
+  }
+  .view-controls button {
+    height: 28px;
+    min-width: 28px;
+    font-size: 17px;
+  }
+  .view-controls button span {
+    display: none;
+  }
+  .focus-overlay {
+    top: auto;
+    bottom: 122px;
+    right: 17px;
+    width: 240px;
+    transform: none;
+  }
+  .immersive .timer-panel {
+    padding: 15px 16px 13px;
+    background: linear-gradient(135deg, #1b291de3, #1c271ddd);
+    backdrop-filter: blur(9px);
+  }
+  .immersive .timer-panel .panel-top > .eyebrow {
+    font-size: 6px;
+  }
+  .immersive .timer-panel .small-badge {
+    font-size: 7px;
+  }
+  .immersive .timer-tabs {
+    margin: 12px 0 0;
+  }
+  .immersive .timer-tabs button {
+    font-size: 9px;
+    padding: 7px 12px;
+  }
+  .immersive .timer-digits {
+    font-size: 48px;
+    margin-top: 13px;
+    letter-spacing: -2px;
+  }
+  .immersive .timer-message {
+    font-size: 7px;
+    margin: 8px -6px 12px;
+  }
+  .immersive .preset-row > button {
+    padding: 6px 3px;
+    font-size: 8px;
+  }
+  .immersive .custom-time input {
+    width: 30px;
+    padding: 6px 0;
+    font-size: 8px;
+  }
+  .immersive .task-input {
+    margin: 11px 0;
+    font-size: 8px;
+    padding: 9px;
+  }
+  .immersive .primary {
+    padding: 10px;
+    font-size: 9px;
+  }
+  .immersive .timer-panel > .tiny {
+    display: none;
+  }
+  .immersive .session-progress {
+    margin: 13px 0 10px;
+  }
+  .immersive .reward-hint {
+    font-size: 6px;
+  }
+  .focus-footnote {
+    display: none;
+  }
+  .progress-hud {
+    left: 18px;
+    bottom: 122px;
+    width: 130px;
+    padding: 12px;
+  }
+  .level-medallion {
+    width: 26px;
+    height: 30px;
+    font-size: 11px;
+  }
+  .progress-identity {
+    gap: 7px;
+  }
+  .progress-identity .eyebrow {
+    font-size: 6px;
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0;
+  }
+  .progress-identity h3 {
+    font-size: 13px;
+  }
+  .progress-numbers {
+    font-size: 7px;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cabin-dock {
+    bottom: 31px;
+    padding: 5px;
+    gap: 1px;
+    max-width: calc(100vw - 26px);
+    width: 420px;
+    justify-content: space-between;
+  }
+  .cabin-dock button {
+    min-width: 0;
+    flex: 1;
+    padding: 7px 4px 8px;
+  }
+  .cabin-dock button > span {
+    font-size: 19px;
+    margin-bottom: 5px;
+  }
+  .cabin-dock button > small {
+    font-size: 6px;
+  }
+  .dock-count {
+    right: 4px;
+    top: 0;
+    font-size: 7px;
+  }
+  .demo-tag {
+    bottom: 7px;
+    left: 18px;
+    font-size: 7px;
+    padding: 0;
+  }
+  .floating-panel {
+    left: 17px;
+    right: 17px;
+    top: 124px;
+    bottom: 120px;
+    width: auto;
+    z-index: 8;
+  }
+  .panel-scroll {
+    padding: 18px;
+  }
+  .panel-scroll .item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .panel-scroll .panel-heading h2 {
+    font-size: 24px;
+  }
+  .immersive:not(.panel-focus) .focus-overlay,
+  .immersive:not(.panel-focus) .progress-hud {
+    visibility: hidden;
+  }
+  .scene-preview {
+    left: 17px;
+    right: 17px;
+    bottom: 120px;
+    transform: none;
+    padding: 10px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .scene-preview p {
+    font-size: 14px;
+  }
+  .scene-preview .eyebrow {
+    font-size: 6px;
+  }
+  .scene-preview button {
+    font-size: 8px;
+    padding: 8px;
+  }
+  .immersive:has(.scene-preview) .floating-panel {
+    bottom: 197px;
+  }
+  .immersive .toast {
+    bottom: 119px;
+    padding: 11px 13px;
+    font-size: 9px;
+    width: max-content;
+    max-width: 90vw;
+  }
+  .zen-session {
+    left: 17px;
+    bottom: 25px;
+    font-size: 8px;
+  }
+  .zen-session button {
+    font-size: 8px;
+  }
+}
+@media (max-width: 390px) {
+  .focus-overlay {
+    width: 221px;
+    right: 12px;
+  }
+  .progress-hud {
+    left: 12px;
+    width: 107px;
+    padding: 9px;
+  }
+  .progress-identity h3 {
+    font-size: 11px;
+  }
+  .level-medallion {
+    display: none;
+  }
+  .cabin-brand small {
+    display: none;
+  }
+  .hud-actions {
+    gap: 4px;
+  }
+  .hud-coins,
+  .hud-boxes {
+    padding: 8px;
+  }
+  .cabin-dock button > small {
+    font-size: 5.5px;
+  }
+}
+@media (max-height: 600px) and (max-width: 700px) {
+  .cabin-location {
+    display: none;
+  }
+  .focus-overlay {
+    bottom: 100px;
+    width: 230px;
+  }
+  .immersive .timer-message,
+  .immersive .task-input,
+  .immersive .panel-top {
+    display: none;
+  }
+  .immersive .timer-tabs {
+    margin-top: 0;
+  }
+  .immersive .timer-digits {
+    font-size: 42px;
+  }
+  .progress-hud {
+    bottom: 100px;
+  }
+  .view-controls {
+    top: 65px;
+  }
+  .cabin-dock {
+    bottom: 22px;
+  }
+  .floating-panel {
+    top: 100px;
+    bottom: 105px;
+  }
+}
+
+.scene-hotspots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 177.777778dvh);
+  height: max(100dvh, 56.25vw);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.scene-hotspots .room-hotspot {
+  pointer-events: auto;
+}
+
+/* V3: hit regions follow the widened scene's authored coordinates. */
+.immersive .desk-hotspot {
+  left: 34%;
+  top: 65%;
+  width: 31%;
+  height: 18%;
+}
+.immersive .fire-hotspot {
+  left: 83%;
+  top: 47%;
+  width: 10%;
+  height: 16%;
+}
+.immersive .pet-hotspot {
+  left: 70%;
+  top: 76%;
+  width: 7%;
+  height: 9%;
+}
